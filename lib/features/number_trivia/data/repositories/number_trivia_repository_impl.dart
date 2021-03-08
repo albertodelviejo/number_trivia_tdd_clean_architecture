@@ -1,12 +1,13 @@
-import 'package:flutter/widgets.dart';
-import 'package:flutter_tdd_clean_architecture_code_alberto/core/error/exceptions.dart';
-import 'package:flutter_tdd_clean_architecture_code_alberto/core/platform/network_info.dart';
-import 'package:flutter_tdd_clean_architecture_code_alberto/features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
-import 'package:flutter_tdd_clean_architecture_code_alberto/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart';
-import 'package:flutter_tdd_clean_architecture_code_alberto/features/number_trivia/domain/entities/number_trivia.dart';
-import 'package:flutter_tdd_clean_architecture_code_alberto/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_tdd_clean_architecture_code_alberto/features/number_trivia/domain/repositories/number_trivia_repository.dart';
+import 'package:flutter/widgets.dart';
+
+import '../../../../core/error/exceptions.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/platform/network_info.dart';
+import '../../domain/entities/number_trivia.dart';
+import '../../domain/repositories/number_trivia_repository.dart';
+import '../datasources/number_trivia_local_data_source.dart';
+import '../datasources/number_trivia_remote_data_source.dart';
 
 typedef Future<NumberTrivia> _ConcreteOrRandomChooser();
 
