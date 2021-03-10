@@ -30,7 +30,7 @@ void main() {
 
       final result = NumberTriviaModel.fromJson(jsonMap);
 
-      expect(result, tNumberTriviaModel);
+      expect(result.number, equals(tNumberTriviaModel.number));
     });
   });
 
