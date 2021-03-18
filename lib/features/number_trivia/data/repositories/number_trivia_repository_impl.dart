@@ -1,9 +1,17 @@
 import 'package:dartz/dartz.dart';
+<<<<<<< HEAD
 import 'package:meta/meta.dart';
 
 import '../../../../core/error/failures.dart';
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/network/network_info.dart';
+=======
+import 'package:flutter/widgets.dart';
+
+import '../../../../core/error/exceptions.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/platform/network_info.dart';
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
 import '../../domain/entities/number_trivia.dart';
 import '../../domain/repositories/number_trivia_repository.dart';
 import '../datasources/number_trivia_local_data_source.dart';
@@ -16,6 +24,7 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   final NumberTriviaLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 
+<<<<<<< HEAD
   NumberTriviaRepositoryImpl({
     @required this.remoteDataSource,
     @required this.localDataSource,
@@ -26,6 +35,16 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   Future<Either<Failure, NumberTrivia>> getConcreteNumberTrivia(
     int number,
   ) async {
+=======
+  NumberTriviaRepositoryImpl(
+      {@required this.remoteDataSource,
+      @required this.localDataSource,
+      @required this.networkInfo});
+
+  @override
+  Future<Either<Failure, NumberTrivia>> getConcreteNumberTrivia(
+      int number) async {
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
     return await _getTrivia(() {
       return remoteDataSource.getConcreteNumberTrivia(number);
     });
@@ -39,8 +58,12 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   }
 
   Future<Either<Failure, NumberTrivia>> _getTrivia(
+<<<<<<< HEAD
     _ConcreteOrRandomChooser getConcreteOrRandom,
   ) async {
+=======
+      _ConcreteOrRandomChooser getConcreteOrRandom) async {
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
     if (await networkInfo.isConnected) {
       try {
         final remoteTrivia = await getConcreteOrRandom();

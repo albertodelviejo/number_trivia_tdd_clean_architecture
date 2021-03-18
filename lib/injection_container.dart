@@ -3,7 +3,11 @@ import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+<<<<<<< HEAD
 import 'core/network/network_info.dart';
+=======
+import 'core/platform/network_info.dart';
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
 import 'core/util/input_converter.dart';
 import 'features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
 import 'features/number_trivia/data/datasources/number_trivia_remote_data_source.dart';
@@ -26,11 +30,19 @@ Future<void> init() async {
     ),
   );
 
+<<<<<<< HEAD
   // Use cases
   sl.registerLazySingleton(() => GetConcreteNumberTrivia(sl()));
   sl.registerLazySingleton(() => GetRandomNumberTrivia(sl()));
 
   // Repository
+=======
+// Use cases
+  sl.registerLazySingleton(() => GetConcreteNumberTrivia(sl()));
+  sl.registerLazySingleton(() => GetRandomNumberTrivia(sl()));
+
+// Repository
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
   sl.registerLazySingleton<NumberTriviaRepository>(
     () => NumberTriviaRepositoryImpl(
       localDataSource: sl(),
@@ -49,6 +61,10 @@ Future<void> init() async {
   );
 
   //! Core
+<<<<<<< HEAD
+=======
+
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
   sl.registerLazySingleton(() => InputConverter());
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
 

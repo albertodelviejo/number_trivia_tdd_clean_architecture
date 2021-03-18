@@ -1,9 +1,16 @@
 import 'dart:convert';
 
+<<<<<<< HEAD
 import '../../../../core/error/exceptions.dart';
 import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+=======
+import 'package:flutter/widgets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../../core/error/exceptions.dart';
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
 import '../models/number_trivia_model.dart';
 
 abstract class NumberTriviaLocalDataSource {
@@ -11,6 +18,10 @@ abstract class NumberTriviaLocalDataSource {
   /// the user had an internet connection.
   ///
   /// Throws [CacheException] if no cached data is present.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
   Future<NumberTriviaModel> getLastNumberTrivia();
 
   Future<void> cacheNumberTrivia(NumberTriviaModel triviaToCache);
@@ -36,8 +47,12 @@ class NumberTriviaLocalDataSourceImpl implements NumberTriviaLocalDataSource {
   @override
   Future<void> cacheNumberTrivia(NumberTriviaModel triviaToCache) {
     return sharedPreferences.setString(
+<<<<<<< HEAD
       CACHED_NUMBER_TRIVIA,
       json.encode(triviaToCache.toJson()),
     );
+=======
+        CACHED_NUMBER_TRIVIA, json.encode(triviaToCache.toJson()));
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
   }
 }

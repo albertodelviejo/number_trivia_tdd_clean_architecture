@@ -14,9 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Number Trivia',
       theme: ThemeData(
+<<<<<<< HEAD
         primaryColor: Colors.green.shade800,
         accentColor: Colors.green.shade600,
       ),
+=======
+          primaryColor: Colors.green.shade800,
+          accentColor: Colors.green.shade600),
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
       home: NumberTriviaPage(),
     );
   }

@@ -1,7 +1,12 @@
 import 'dart:convert';
 
+<<<<<<< HEAD
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
+=======
+import 'package:flutter/widgets.dart';
+import 'package:http/http.dart' as http;
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
 
 import '../../../../core/error/exceptions.dart';
 import '../models/number_trivia_model.dart';
@@ -24,6 +29,7 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
   NumberTriviaRemoteDataSourceImpl({@required this.client});
 
   @override
+<<<<<<< HEAD
   Future<NumberTriviaModel> getConcreteNumberTrivia(int number) =>
       _getTriviaFromUrl('http://numbersapi.com/$number');
 
@@ -34,6 +40,20 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
   Future<NumberTriviaModel> _getTriviaFromUrl(String url) async {
     final response = await client.get(
       url,
+=======
+  Future<NumberTriviaModel> getConcreteNumberTrivia(int number) async {
+    return _getTriviaFromUrl('numbersapi.com', '/$number');
+  }
+
+  @override
+  Future<NumberTriviaModel> getRandomNumberTrivia() async {
+    return _getTriviaFromUrl('numbersapi.com', '/random');
+  }
+
+  Future<NumberTriviaModel> _getTriviaFromUrl(String url, String path) async {
+    final response = await client.get(
+      Uri.https(url, path),
+>>>>>>> 50ca362eadb408b155ea9cf403107f2e7f94e42e
       headers: {
         'Content-Type': 'application/json',
       },
